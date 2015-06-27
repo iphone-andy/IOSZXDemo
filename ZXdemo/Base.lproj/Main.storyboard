@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ykj-Dp-A18">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--扫描二维码-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="扫描二维码" id="8JY-hv-nkn">
+                        <barButtonItem key="rightBarButtonItem" title="生成" id="OcH-rf-d1z">
+                            <connections>
+                                <segue destination="gr3-Q7-L8V" kind="push" id="mPy-Lf-RmV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="574.93333333333328" y="408.95999999999998"/>
+        </scene>
+        <!--生成二维码-->
+        <scene sceneID="37s-E9-piL">
+            <objects>
+                <viewController id="gr3-Q7-L8V" customClass="outputREViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eMc-C1-TeQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Ko-vO-XQx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JQ3-IZ-hv0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入文字内容..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GV2-ys-8zn">
+                                <rect key="frame" x="16" y="85" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zG7-eZ-ZXK">
+                                <rect key="frame" x="16" y="176" width="288" height="273"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IME-Hp-WUJ">
+                                <rect key="frame" x="145" y="123" width="30" height="30"/>
+                                <state key="normal" title="生成">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="action:" destination="gr3-Q7-L8V" eventType="touchUpInside" id="aKr-JW-1ns"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Ko-vO-XQx" firstAttribute="top" secondItem="zG7-eZ-ZXK" secondAttribute="bottom" constant="119" id="9jc-OJ-f3H"/>
+                            <constraint firstItem="IME-Hp-WUJ" firstAttribute="centerX" secondItem="GV2-ys-8zn" secondAttribute="centerX" id="Cw4-Dh-iZK"/>
+                            <constraint firstItem="IME-Hp-WUJ" firstAttribute="top" secondItem="GV2-ys-8zn" secondAttribute="bottom" constant="8" symbolic="YES" id="aag-jB-esk"/>
+                            <constraint firstItem="zG7-eZ-ZXK" firstAttribute="top" secondItem="IME-Hp-WUJ" secondAttribute="bottom" constant="23" id="f7G-wE-yVc"/>
+                            <constraint firstItem="zG7-eZ-ZXK" firstAttribute="trailing" secondItem="JQ3-IZ-hv0" secondAttribute="trailingMargin" id="iyr-dO-Y7D"/>
+                            <constraint firstItem="GV2-ys-8zn" firstAttribute="top" secondItem="eMc-C1-TeQ" secondAttribute="bottom" constant="21" id="nce-BZ-cgG"/>
+                            <constraint firstItem="GV2-ys-8zn" firstAttribute="leading" secondItem="zG7-eZ-ZXK" secondAttribute="leading" id="nf9-CM-cQ2"/>
+                            <constraint firstItem="GV2-ys-8zn" firstAttribute="leading" secondItem="JQ3-IZ-hv0" secondAttribute="leadingMargin" id="sXL-vd-BYM"/>
+                            <constraint firstItem="zG7-eZ-ZXK" firstAttribute="trailing" secondItem="GV2-ys-8zn" secondAttribute="trailing" id="t2x-oZ-An7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="生成二维码" id="yyc-s8-HyD"/>
+                    <connections>
+                        <outlet property="reImageView" destination="zG7-eZ-ZXK" id="Zb8-mi-aBu"/>
+                        <outlet property="reText" destination="GV2-ys-8zn" id="7oC-0k-ZnL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKm-U0-EvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mSa-ux-gOp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ykj-Dp-A18" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7kV-Mh-tGH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="caJ-G6-B8p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yn-L2-Ub3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.86666666666667" y="414.63999999999999"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
